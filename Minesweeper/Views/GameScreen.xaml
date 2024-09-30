@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Minesweeper.Views.GameScreen"
+             Title="Minesweeper">
+
+    <ScrollView 
+    Orientation="Both" 
+        HorizontalScrollBarVisibility="Never"
+                VerticalScrollBarVisibility="Never">
+        <VerticalStackLayout Spacing="10">
+            <Button x:Name="toggleModeButton" Text="Flag Mode: Off" Clicked="OnToggleModeClicked"/>
+
+            <!-- The Minesweeper grid -->
+            <Grid x:Name="minesweeperGrid" HorizontalOptions="Center" VerticalOptions="Center">
+                <!-- Grid rows and columns will be added dynamically in code-behind -->
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

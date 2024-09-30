@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Minesweeper.Views.GameSelect"
+             Title="Game Settings"
+             BackgroundColor="LavenderBlush">
+
+    <VerticalStackLayout Spacing="20" Padding="20" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+
+        <Label Text="Rows:" TextColor="Black" />
+        <Slider x:Name="rowsSlider" Minimum="9" Maximum="30" Value="9" ValueChanged="OnSliderValueChanged" />
+        
+
+        <Label Text="{Binding Source={x:Reference rowsSlider}, Path=Value, StringFormat='{0:F0}'}" TextColor="Black" />
+
+        <Label Text="Columns:" TextColor="Black" />
+        <Slider x:Name="colsSlider" Minimum="9" Maximum="30" Value="9" ValueChanged="OnSliderValueChanged" />
+        <Label Text="{Binding Source={x:Reference colsSlider}, Path=Value, StringFormat='{0:F0}'}" TextColor="Black" />
+
+        <Label Text="Bombs:" TextColor="Black" />
+        <Slider x:Name="bombsSlider" Minimum="15" Maximum="80" Value="15" />
+        <Label Text="{Binding Source={x:Reference bombsSlider}, Path=Value, StringFormat='{0:F0}'}" TextColor="Black" />
+
+        <Button Text="Start Game" Clicked="OnStartGameClicked" />
+        <Button Text="Cancel" Clicked="OnCancelClicked" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
